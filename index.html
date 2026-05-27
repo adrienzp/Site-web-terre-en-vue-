@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terre en Vue — Sculptures & Céramiques</title>
+  <meta name="description" content="Terre en Vue — Galerie de sculptures et céramiques artisanales. Œuvres figuratives, visages en terre cuite, céramiques émaillées." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#accueil" class="nav-logo">Terre en Vue</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#univers">Univers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="accueil" class="hero">
+    <div class="hero-bg">
+      <img src="images/sculptures/1449b403-ab71-4b25-a6d8-4dca240c3f1e.JPG" alt="Sculpture" class="hero-img" id="heroImg" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Sculpteure · Céramiste</p>
+      <h1 class="hero-title">Terre en Vue</h1>
+      <p class="hero-subtitle">La matière prend vie entre les mains<br>— l'argile devient émotion.</p>
+      <a href="#galerie" class="btn-primary">Découvrir l'œuvre</a>
+    </div>
+    <div class="hero-scroll">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <h2 class="section-title">L'art de modeler</h2>
+          <p>Chaque œuvre naît d'un geste instinctif, d'une intention profonde. Entre sculpture figurative et céramique fonctionnelle, l'atelier explore la rencontre entre le corps humain et la terre — matière ancestrale, vivante, transformable.</p>
+          <p>Des visages qui émergent de la matière, des groupes de figures soudées dans l'élan du mouvement, des objets du quotidien élevés au rang d'œuvre d'art.</p>
+        </div>
+        <div class="intro-figures">
+          <div class="figure-card">
+            <span class="figure-number">57</span>
+            <span class="figure-label">Œuvres</span>
+          </div>
+          <div class="figure-card">
+            <span class="figure-number">3</span>
+            <span class="figure-label">Techniques</span>
+          </div>
+          <div class="figure-card">
+            <span class="figure-number">∞</span>
+            <span class="figure-label">Émotions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie" class="galerie">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Galerie</h2>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">Tout</button>
+          <button class="filter-btn" data-filter="figuratif">Figuratif</button>
+          <button class="filter-btn" data-filter="visages">Visages</button>
+          <button class="filter-btn" data-filter="ceramique">Céramique</button>
+        </div>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Figuratif -->
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/00d735c7-2ec7-4939-aae8-0d89bb421ee2.JPG" alt="Groupe de personnages" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Groupe de personnages</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/1449b403-ab71-4b25-a6d8-4dca240c3f1e.JPG" alt="Pensée" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Pensée</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/14c35cdf-511d-4581-9fd4-78383e8dfaa0.JPG" alt="Figure" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Figure</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/2b1be7ee-3ed7-4752-9ebb-c113033d4104.JPG" alt="Mouvement" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Mouvement</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/3ac6ac99-cdaa-4f6c-a582-1e16b18eced4.JPG" alt="Élan" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Élan</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/40566563-4fe5-46fe-bee4-b5a623a385cc.JPG" alt="Ensemble" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Ensemble</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/41f74f49-6054-4818-bac3-98a354542377.JPG" alt="Corps" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Corps</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/4236d976-d01b-4c6e-bd76-ed736b6367cc.JPG" alt="Introspection" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Introspection</div>
+        </div>
+        <!-- Visages -->
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/063a99a6-94c1-49ea-a5cd-4e6003991344.JPG" alt="Vase-visage terracotta" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Vase-visage — Terracotta</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/5438d604-6fa4-4626-8df2-969c5f8e5306.JPG" alt="Vase-visage sable" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Vase-visage — Ocre</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/54a74f92-f49b-4d62-9b15-e685d186517b.JPG" alt="Visage" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Visage</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/54ff9925-8452-408c-95f0-c9ea7c3c5f4f.JPG" alt="Portrait" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Portrait</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/56afadf4-8bf6-49b8-8be1-35d4c34af55a.JPG" alt="Buste" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Buste</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/5f8b5d8b-b592-4caa-9e65-8a566975f4cf.JPG" alt="Regard" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Regard</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/64a4f70b-2d3d-4ff1-8992-a1860180f96f.JPG" alt="Expression" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Expression</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/671f0f2c-f7eb-4704-b74f-348ee752e67d.JPG" alt="Silence" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Silence</div>
+        </div>
+        <!-- Céramique -->
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/b4007b68-bdf9-4131-90ac-d7c10488dbb1.JPG" alt="Tasses émaillées" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Tasses émaillées</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/679ff8dd-2dc9-4f6a-8314-0114ff8bbbb1.JPG" alt="Céramique" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Céramique</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/691f77e7-714e-441d-a159-6360556669b1.JPG" alt="Pièce utilitaire" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Pièce utilitaire</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/6a75d98b-3fe2-48c3-ae53-9f5391e9761c.JPG" alt="Objet d'art" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Objet d'art</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/6aa5073b-005f-4393-a3d0-a8a1f081635a.JPG" alt="Pièce émaillée" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Pièce émaillée</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/6c198da5-3513-4662-b42f-0e66a63fa55f.JPG" alt="Création" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Création</div>
+        </div>
+        <!-- Suite des images -->
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/7346850f-3162-4336-a19f-a34229764e2a.JPG" alt="Œuvre" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Œuvre</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/79c49a77-86f0-4870-9077-d630868ab7e0.JPG" alt="Composition" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Composition</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/7c9bd107-1b53-4323-b912-91686f999ed8.JPG" alt="Masque" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Masque</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/7e4f219b-fd99-4678-a154-7319e6a11145.JPG" alt="Profil" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Profil</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/84304b18-5bda-42d4-b74b-e6d394c826bc.JPG" alt="Sculpture" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Sculpture</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/8b4e9861-46ce-44ff-b11b-8ee2805daf3d.JPG" alt="Forme" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Forme</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/8e508137-abfa-45f3-91fb-d566d3c2c285.JPG" alt="Éveil" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Éveil</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/935106af-4973-46e6-bae9-1587c4558873.JPG" alt="Posture" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Posture</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/b3760e3d-15b6-49bc-a065-5b3c4f266db3.JPG" alt="Vase" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Vase</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/b6f98103-b45d-4ac8-b6f2-c455d002bff9.JPG" alt="Bol" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Bol</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/bd2b94ad-5123-46cd-9802-6ba3dbcdfcd1.JPG" alt="Geste" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Geste</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/c12ec9fd-c847-43a5-b4dc-59da83c4169e.JPG" alt="Contemplation" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Contemplation</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/c244eeee-64fe-4efd-b501-4fed7a5b9e62.JPG" alt="Lien" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Lien</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/ce2de2bf-8971-4fac-aa7c-5fff7ab47082.JPG" alt="Présence" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Présence</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/ce434595-bcfb-40f3-874c-17219f0fddca.JPG" alt="Terre" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Terre</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/d9fe5e2a-5d72-4e29-bd20-c294ba25005a.JPG" alt="Texture" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Texture</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/dc0d541f-7cdc-48ff-a5a9-433f83314821.JPG" alt="Pièce unique" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Pièce unique</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/dc75a113-4852-4886-b6a3-9c695a983fa2.JPG" alt="Émaillé" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Émaillé</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/ee2a1c04-0da7-4e5b-a519-848270fdf99a.JPG" alt="Force" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Force</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/f04b8018-ac98-4993-89ee-aca82bfafac0.JPG" alt="Équilibre" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Équilibre</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/f1b64c30-d17d-4dc6-9d2a-7428a1489cbb.JPG" alt="Mémoire" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Mémoire</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/f3654491-6225-4eeb-99bd-71f7f2144010.JPG" alt="Rêve" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Rêve</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/f44ff7d4-8f11-455f-b3a9-1d9924206354.JPG" alt="Artisanat" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Artisanat</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/f4c58517-b4df-4089-b5d8-23524c2e7295.JPG" alt="Émotion" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Émotion</div>
+        </div>
+        <div class="gallery-item" data-category="visages">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/f53a4666-c1fb-47ba-85cf-91539853c401.JPG" alt="Identité" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Identité</div>
+        </div>
+        <div class="gallery-item" data-category="figuratif">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/fa346022-ae8a-4373-b948-3a28b84fafe5.JPG" alt="Vie" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Vie</div>
+        </div>
+        <div class="gallery-item" data-category="ceramique">
+          <div class="gallery-img-wrap">
+            <img src="images/sculptures/fb8011b4-b995-4bee-8c6b-63a27a1a72fd.JPG" alt="Pièce artisanale" loading="lazy" />
+          </div>
+          <div class="gallery-caption">Pièce artisanale</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Précédent">&#8592;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Suivant">&#8594;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" />
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Univers -->
+  <section id="univers" class="univers">
+    <div class="container">
+      <div class="univers-grid">
+        <div class="univers-img-wrap">
+          <img src="images/sculptures/063a99a6-94c1-49ea-a5cd-4e6003991344.JPG" alt="L'artiste à l'œuvre" />
+        </div>
+        <div class="univers-text">
+          <p class="section-eyebrow">L'Univers</p>
+          <h2 class="section-title">La sculpteure</h2>
+          <p>— <em>Prénom Nom à compléter</em> —</p>
+          <br/>
+          <p>Formée à la sculpture figurative et à la céramique, elle développe depuis plusieurs années un langage plastique singulier où le corps humain est au cœur de chaque création. La terre — argile, terracotta, grès — est sa matière de prédilection.</p>
+          <p>Entre sculptures expressives et céramiques du quotidien élevées au rang d'art, chaque pièce est unique, façonnée à la main dans son atelier.</p>
+          <p>Ses œuvres questionnent l'identité, le lien entre les êtres, la mémoire inscrite dans la chair et dans la matière.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation -->
+  <section class="citation">
+    <div class="container">
+      <blockquote>
+        <p>« La terre ne ment pas. Elle garde l'empreinte de chaque hésitation, de chaque certitude. »</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-text">
+          <p class="section-eyebrow">Contact</p>
+          <h2 class="section-title">Écrivez-moi</h2>
+          <p>Pour toute demande d'acquisition, de commande sur mesure, d'exposition ou simplement pour échanger autour de mon travail.</p>
+          <div class="contact-info">
+            <p>📧 <a href="mailto:contact@terre-en-vue.fr">contact@terre-en-vue.fr</a></p>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="votre@email.fr" />
+          </div>
+          <div class="form-group">
+            <label for="sujet">Sujet</label>
+            <select id="sujet" name="sujet">
+              <option value="">— Choisissez —</option>
+              <option value="acquisition">Acquisition d'une œuvre</option>
+              <option value="commande">Commande sur mesure</option>
+              <option value="exposition">Proposition d'exposition</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Votre message..." rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Envoyer</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-logo">Terre en Vue</p>
+        <p class="footer-tagline">Sculptures & Céramiques artisanales</p>
+        <p class="footer-copy">&copy; 2026 Terre en Vue — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
