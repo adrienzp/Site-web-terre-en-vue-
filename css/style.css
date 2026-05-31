@@ -545,6 +545,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .lightbox-prev { left: 1.5rem; }
 .lightbox-next { right: 1.5rem; }
 
+.lightbox-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+.lightbox-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(240,230,216,0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.lightbox-dot.active {
+  background: #faf5ef;
+  transform: scale(1.4);
+}
+.lightbox-dot:hover:not(.active) {
+  background: rgba(240,230,216,0.6);
+}
+
 /* ============================================
    UNIVERS / BIOGRAPHIE
    ============================================ */
@@ -767,16 +792,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================
    RESPONSIVE
    ============================================ */
+
+/* ── Tablette (≤ 900px) ── */
 @media (max-width: 900px) {
-  .intro-grid { grid-template-columns: 1fr; }
-  .intro-figures { flex-direction: row; justify-content: flex-start; }
-  .univers-grid { grid-template-columns: 1fr; }
+  .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .intro-figures { flex-direction: row; justify-content: flex-start; flex-wrap: wrap; }
+  .univers-grid { grid-template-columns: 1fr; gap: 3rem; }
   .univers-img-wrap img { height: 360px; }
   .univers-img-wrap::after { display: none; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
 }
 
+/* ── Mobile (≤ 640px) ── */
 @media (max-width: 640px) {
+  /* Padding général réduit */
+  .container { padding: 0 1.25rem; }
+  .intro, .galerie, .univers, .contact { padding: 4.5rem 0; }
+  .citation { padding: 4rem 0; }
+
+  /* Navigation hamburger */
   .nav-links { display: none; flex-direction: column; gap: 1.5rem; }
   .nav-links.open {
     display: flex;
@@ -792,10 +826,34 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .nav-links.open a { color: var(--cream-dim); }
   .nav-links.open a:hover { color: var(--cream); background: rgba(46,26,14,0.05); }
   .nav-toggle { display: flex; }
-  .gallery-grid { grid-template-columns: repeat(2,1fr); gap: 0.75rem; }
+
+  /* Hero : titre plus petit, sous-titre réduit */
+  .hero-title    { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+  .hero-subtitle { font-size: 0.95rem; margin-bottom: 2rem; }
+
+  /* Intro : chiffres en colonne */
   .intro-figures { flex-direction: column; }
+  .figure-card   { padding: 1.25rem 1.75rem; }
+
+  /* Galerie */
+  .gallery-grid { grid-template-columns: repeat(2,1fr); gap: 0.75rem; }
   .section-header { flex-direction: column; align-items: flex-start; }
   .filter-tabs { border-radius: var(--r-lg); }
+
+  /* Sur mobile, les captions sont toujours visibles (pas de hover) */
+  .gallery-caption { transform: translateY(0); }
+  .gallery-item::after { opacity: 1; }
+
+  /* Citation : guillemet décoratif plus petit */
+  .citation::before { font-size: 10rem; }
+
+  /* Biographie */
+  .univers-img-wrap img { border-radius: var(--r-lg); height: 260px; }
+
+  /* Formulaire de contact */
   .contact-form { padding: 1.5rem; }
-  .univers-img-wrap img { border-radius: var(--r-lg); }
+
+  /* Lightbox : flèches plus proches des bords */
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
 }

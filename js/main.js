@@ -45,26 +45,78 @@ const lightboxCaption = document.getElementById('lightboxCaption');
 const lightboxClose   = document.getElementById('lightboxClose');
 const lightboxPrev    = document.getElementById('lightboxPrev');
 const lightboxNext    = document.getElementById('lightboxNext');
+const lightboxDots    = document.getElementById('lightboxDots');
 
-let visibleItems = [];
-let currentIndex = 0;
+let visibleItems     = [];
+let currentIndex     = 0;
+let currentPhotos    = [];
+let currentPhotoIdx  = 0;
+
+function getPhotos(item) {
+  const raw = item.dataset.images;
+  if (raw) return JSON.parse(raw);
+  return [item.querySelector('img').src];
+}
 
 function openLightbox(index) {
-  visibleItems = [...galleryItems].filter(i => !i.classList.contains('hidden'));
-  currentIndex = index;
-  showLightboxItem();
+  visibleItems    = [...galleryItems].filter(i => !i.classList.contains('hidden'));
+  currentIndex    = index;
+  currentPhotoIdx = 0;
+  currentPhotos   = getPhotos(visibleItems[currentIndex]);
+  showLightboxPhoto();
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function showLightboxItem() {
+
+function showLightboxPhoto() {
   const item = visibleItems[currentIndex];
   if (!item) return;
-  const img = item.querySelector('img');
   const cap = item.querySelector('.gallery-caption');
-  lightboxImg.src = img.src;
-  lightboxImg.alt = img.alt;
+  lightboxImg.src = currentPhotos[currentPhotoIdx];
+  lightboxImg.alt = item.querySelector('img').alt;
   lightboxCaption.textContent = cap ? cap.textContent : '';
+  renderDots();
 }
+
+function renderDots() {
+  lightboxDots.innerHTML = '';
+  if (currentPhotos.length <= 1) { lightboxDots.style.display = 'none'; return; }
+  lightboxDots.style.display = 'flex';
+  currentPhotos.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'lightbox-dot' + (i === currentPhotoIdx ? ' active' : '');
+    dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+    dot.addEventListener('click', e => {
+      e.stopPropagation();
+      currentPhotoIdx = i;
+      showLightboxPhoto();
+    });
+    lightboxDots.appendChild(dot);
+  });
+}
+
+function goNext() {
+  if (currentPhotoIdx < currentPhotos.length - 1) {
+    currentPhotoIdx++;
+  } else {
+    currentIndex    = (currentIndex + 1) % visibleItems.length;
+    currentPhotos   = getPhotos(visibleItems[currentIndex]);
+    currentPhotoIdx = 0;
+  }
+  showLightboxPhoto();
+}
+
+function goPrev() {
+  if (currentPhotoIdx > 0) {
+    currentPhotoIdx--;
+  } else {
+    currentIndex    = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+    currentPhotos   = getPhotos(visibleItems[currentIndex]);
+    currentPhotoIdx = currentPhotos.length - 1;
+  }
+  showLightboxPhoto();
+}
+
 function closeLightbox() {
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
@@ -79,35 +131,52 @@ galleryItems.forEach(item => {
 
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-lightboxNext.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % visibleItems.length;
-  showLightboxItem();
-});
-lightboxPrev.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
-  showLightboxItem();
-});
+lightboxNext.addEventListener('click', e => { e.stopPropagation(); goNext(); });
+lightboxPrev.addEventListener('click', e => { e.stopPropagation(); goPrev(); });
 document.addEventListener('keydown', e => {
   if (!lightbox.classList.contains('open')) return;
   if (e.key === 'Escape')     closeLightbox();
-  if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % visibleItems.length; showLightboxItem(); }
-  if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showLightboxItem(); }
+  if (e.key === 'ArrowRight') goNext();
+  if (e.key === 'ArrowLeft')  goPrev();
 });
 
 // ── Contact form ──
 const contactForm = document.getElementById('contactForm');
 const formNote    = document.getElementById('formNote');
-contactForm.addEventListener('submit', e => {
+contactForm.addEventListener('submit', async e => {
   e.preventDefault();
   const name    = contactForm.name.value.trim();
   const email   = contactForm.email.value.trim();
   const message = contactForm.message.value.trim();
   if (!name || !email || !message) {
+    formNote.style.color = '#c0392b';
     formNote.textContent = 'Merci de remplir tous les champs obligatoires.';
     return;
   }
-  formNote.textContent = 'Merci pour votre message ! Je vous répondrai dans les plus brefs délais.';
-  contactForm.reset();
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Envoi en cours…';
+  try {
+    const response = await fetch('https://formspree.io/f/mvzynvvn', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(contactForm)
+    });
+    if (response.ok) {
+      formNote.style.color = '#27ae60';
+      formNote.textContent = 'Merci pour votre message ! Béatrice vous répondra dans les plus brefs délais.';
+      contactForm.reset();
+    } else {
+      formNote.style.color = '#c0392b';
+      formNote.textContent = 'Une erreur est survenue. Merci de réessayer ou d\'écrire directement à adh.deco@gmail.com.';
+    }
+  } catch {
+    formNote.style.color = '#c0392b';
+    formNote.textContent = 'Impossible d\'envoyer le message. Vérifiez votre connexion et réessayez.';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Envoyer';
+  }
 });
 
 // ── Animated number counter ──
